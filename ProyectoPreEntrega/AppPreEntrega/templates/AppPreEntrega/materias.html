@@ -4,26 +4,16 @@
 
 {% block contenidoQueCambia %}
 
-    <!--Aquí va lo que cambia y aquello asociado a esta vista -->
-    
-
-    
-    {% comment %} 
-
-    <h1>MATERIAS</h1>
-    <p>Acá va la info de los MATERIAS</p>
-
-    {% endcomment %}
-
     {% if miFormulario.errors %}
         <p style= "color: red;"> Están mal los datos, revisar</p>
-        {% endif %}
-        
-        <form action= "" method= "POST">{% csrf_token %}
-            <table>
-                {{ miFormulario.as_table }}
+    {% endif %}
+
+    <h3>Formulario - Agregar Materia</h3>
+    <form action= "" method= "POST">{% csrf_token %}
+        <table>
+            {{ miFormulario.as_table }}
         </table>
-        <input type= "submit" value= "Enviar">
-    </form>   
+    <input type= "submit" value= "Enviar">
+    </form>  
 
 {% endblock %}

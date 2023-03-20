@@ -19,7 +19,7 @@ def inicio(request):
 
 def materias(request):    
     if request.method == "POST":
-        miFormulario = MateriaFormulario(request.POST) # Aqui me llega la informacion del html
+        miFormulario= MateriaFormulario(request.POST) # Aqui me llega la informacion del html
         print(miFormulario)
     
         if miFormulario.is_valid:
@@ -34,7 +34,7 @@ def materias(request):
 
 def docentes(request):
     if request.method == "POST":
-        miFormulario = DocenteFormulario(request.POST) # Aqui me llega la informacion del html
+        miFormulario= DocenteFormulario(request.POST) # Aqui me llega la informacion del html
         print(miFormulario)
     
         if miFormulario.is_valid:
@@ -49,7 +49,7 @@ def docentes(request):
 
 def alumnos(request):
     if request.method == "POST":
-        miFormulario = AlumnoFormulario(request.POST) # Aqui me llega la informacion del html
+        miFormulario= AlumnoFormulario(request.POST) # Aqui me llega la informacion del html
         print(miFormulario)
     
         if miFormulario.is_valid:

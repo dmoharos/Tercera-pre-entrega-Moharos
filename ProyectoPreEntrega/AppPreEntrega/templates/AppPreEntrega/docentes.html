@@ -4,19 +4,11 @@
 
 {% block contenidoQueCambia %}
 
-    <!--Aquí va lo que cambia y aquello asociado a esta vista -->
-    
-    {% comment %} 
-
-    <h1>DOCENTES</h1>
-    <p>Acá va la info de los DOCENTES</p>
-
-    {% endcomment %}
-
     {% if miFormulario.errors %}
     <p style= "color: red;"> Están mal los datos, revisar</p>
     {% endif %}
-    
+
+    <h3>Formulario - Agregar Docente</h3>
     <form action= "" method= "POST">{% csrf_token %}
         <table>
             {{ miFormulario.as_table }}
