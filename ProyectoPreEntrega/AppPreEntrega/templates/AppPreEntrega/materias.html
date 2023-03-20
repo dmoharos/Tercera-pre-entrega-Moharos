@@ -6,10 +6,14 @@
 
     <!--Aquí va lo que cambia y aquello asociado a esta vista -->
     
-    <h1>MATERIAS</h1>
-    <p>Acá va la info de los MATERIAS</p>
+
     
     {% comment %} 
+
+    <h1>MATERIAS</h1>
+    <p>Acá va la info de los MATERIAS</p>
+
+    {% endcomment %}
 
     {% if miFormulario.errors %}
         <p style= "color: red;"> Están mal los datos, revisar</p>
@@ -20,8 +24,6 @@
                 {{ miFormulario.as_table }}
         </table>
         <input type= "submit" value= "Enviar">
-    </form>
-    
-    {% endcomment %}
+    </form>   
 
 {% endblock %}
