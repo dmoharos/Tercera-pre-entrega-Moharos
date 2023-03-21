@@ -4,9 +4,11 @@
 
 {% block contenidoQueCambia %}
 
-<!--Aquí va lo que cambia y aquello asociado a esta vista -->
-<h1>Este es el título del Inicio que cambió</h1>
-<p>Se ha heredado todo desde la plantilla padre</p>
-<h3>En el hijo, inicio.html, casi no hay nada </h3>
+    <h3>Buscar comision</h3>
+
+    <form action= "/AppPreEntrega/buscar/" method= "GET">
+        <input type= "number" name= "comision" id= "comision">
+        <input type= "submit" value= "Buscar">
+    </form>
 
 {% endblock %}

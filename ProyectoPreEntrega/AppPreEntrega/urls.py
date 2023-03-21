@@ -6,11 +6,11 @@ urlpatterns = [
     path('materias/', views.materias, name= "Materias"),
     path('docentes/', views.docentes, name= "Docentes"),
     path('alumnos/', views.alumnos, name= "Alumnos"),
+    path('buscar/', views.buscar),
     
     #path('materiaFormulario/', views.materiaFormulario, name= "materiaFormulario"),
     #path('docenteFormulario/', views.docenteFormulario, name= "docenteFormulario"),
     #path('alumnoFormulario/', views.alumnoFormulario, name= "alumnoFormulario"),
+    #path('busquedaComision/', views.busquedaComision, name= "busquedaComision"),
     
-    #path('busquedaCamada/', views.busquedaCamada, name= "busquedaCamada"),
-    #path('buscar/', views.buscar),
 ]

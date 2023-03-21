@@ -8,18 +8,22 @@ from AppPreEntrega.forms import MateriaFormulario, DocenteFormulario, AlumnoForm
 def inicio(request):
     return render(request, "AppPreEntrega/inicio.html")
 
+
 #def materias(request):
     #return render(request, "AppPreEntrega/materias.html")
+
 
 #def docentes(request):
     #return render(request, "AppPreEntrega/docentes.html")
 
+
 #def alumnos(request):
     #return render(request, "AppPreEntrega/alumnos.html")
 
+
 def materias(request):    
     if request.method == "POST":
-        miFormulario= MateriaFormulario(request.POST) # Aqui me llega la informacion del html
+        miFormulario= MateriaFormulario(request.POST)
         print(miFormulario)
     
         if miFormulario.is_valid:
@@ -32,9 +36,10 @@ def materias(request):
     
     return render(request, "AppPreEntrega/materias.html", {"miFormulario": miFormulario})
 
+
 def docentes(request):
     if request.method == "POST":
-        miFormulario= DocenteFormulario(request.POST) # Aqui me llega la informacion del html
+        miFormulario= DocenteFormulario(request.POST)
         print(miFormulario)
     
         if miFormulario.is_valid:
@@ -47,10 +52,10 @@ def docentes(request):
     
     return render(request, "AppPreEntrega/docentes.html", {"miFormulario": miFormulario})
 
+
 def alumnos(request):
     if request.method == "POST":
-        miFormulario= AlumnoFormulario(request.POST) # Aqui me llega la informacion del html
-        print(miFormulario)
+        miFormulario= AlumnoFormulario(request.POST)
     
         if miFormulario.is_valid:
             informacion= miFormulario.cleaned_data
@@ -62,19 +67,17 @@ def alumnos(request):
     
     return render(request, "AppPreEntrega/alumnos.html", {"miFormulario": miFormulario})
 
-"""
-def busquedaCamada(request):
-    return render(request, "AppPreEntrega/busquedaCamada.html")
+
+#def busquedaComision(request):
+    #return render(request, "AppPreEntrega/busquedaComision.html")
+
 
 def buscar(request):
-    #respuesta= f"Estoy buscando la camada nro: {request.GET['camada']}"
-    if request.GET["camada"]:
-        camada= request.GET['camada']
-        cursos= Curso.objects.filter(camada__icontains= camada)
-        return render(request, "AppPreEntrega/resultadosBusqueda.html", {"cursos": cursos, "camada": camada})
+    if request.GET["comision"]:
+        comision= request.GET['comision']
+        materias= Materia.objects.filter(comision__icontains= comision)
+        return render(request, "AppPreEntrega/resultadosBusqueda.html", {"materias": materias, "comision": comision})
     else:
         respuesta= "No enviaste datos"
-
-    #return HttpResponse(respuesta)
+        
     return render(request, "AppPreEntrega/inicio.html", {"respuesta": respuesta})
-"""
